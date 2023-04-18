@@ -1,0 +1,390 @@
+{
+	"info": {
+		"_postman_id": "19088539-e55d-4c35-8dfd-04e5da046d34",
+		"name": "laravel assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23060651"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"token\", pm.response.json().data.token)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"user@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/login",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"user\",\r\n    \"email\": \"user@gmail.com\",\r\n    \"password\": \"12345678\",\r\n    \"password_confirmation\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/register",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Module",
+			"item": [
+				{
+					"name": "Profile",
+					"item": [
+						{
+							"name": "Logout",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/api/logout",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"logout"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get profile user",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/api/profile",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"profile"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Books",
+					"item": [
+						{
+							"name": "Store",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "March Hare. 'He.",
+											"type": "text"
+										},
+										{
+											"key": "author",
+											"value": "Nico Schmeler",
+											"type": "text"
+										},
+										{
+											"key": "genre",
+											"value": "Sunt",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "I wonder?' And here Alice began in a wondering tone. 'Why, what are they made of?' 'Pepper, mostly,' said the Queen. 'Their heads are gone, if it makes me grow larger, I can find out the answer to.",
+											"type": "text"
+										},
+										{
+											"key": "isbn",
+											"value": "9789600599121",
+											"type": "text"
+										},
+										{
+											"key": "publisher",
+											"value": "Sit Molestiae",
+											"type": "text"
+										},
+										{
+											"key": "published",
+											"value": "15-09-1985",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/mauli/Pictures/image/YbGZdBFUR7q8qE3R3ROuHXhkarTrCKXaZN4BzgbQ.jpg"
+										},
+										{
+											"key": "status ",
+											"value": "true",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{URL}}/api/books",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"books"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/api/books/151",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"books",
+										"151"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/api/books",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"books"
+									],
+									"query": [
+										{
+											"key": "date",
+											"value": "2023-4-3/2023-4-15",
+											"disabled": true
+										},
+										{
+											"key": "search",
+											"value": " ",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "The Hobbit",
+											"type": "text"
+										},
+										{
+											"key": "author",
+											"value": "Nico Schmeler",
+											"type": "text"
+										},
+										{
+											"key": "genre",
+											"value": "Sunt",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "I wonder?' And here Alice began in a wondering tone. 'Why, what are they made of?' 'Pepper, mostly,' said the Queen. 'Their heads are gone, if it makes me grow larger, I can find out the answer to.",
+											"type": "text"
+										},
+										{
+											"key": "isbn",
+											"value": "9789600599121",
+											"type": "text"
+										},
+										{
+											"key": "publisher",
+											"value": "Sit Molestiae",
+											"type": "text"
+										},
+										{
+											"key": "published",
+											"value": "15-10-1985",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "true",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/mauli/Pictures/image/Mine.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{URL}}/api/books/151",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"books",
+										"151"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/api/books/2",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"books",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Books",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/api/get-all-books?search=The",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"get-all-books"
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": "The"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}
