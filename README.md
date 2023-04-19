@@ -14,6 +14,7 @@
 - Run `composer install`
 - Run `php artisan key:generate`
 - **Setup .env file**
+- **cretate database and add credential in .env file**
 - **Run migration `php artisan migrate`**
 - **Run seeder `php artisan db:seed`**
 - **After Installation read API documentation run url `{{URL}}/documentation`**
